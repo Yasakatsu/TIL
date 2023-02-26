@@ -1,4 +1,3 @@
-```php
 <?php
 
 require_once('./lib/Loader.php');
@@ -115,4 +114,3 @@ $messageObj->displayStatusMessage($enemies);
 </body>
 
 </html>
-```
