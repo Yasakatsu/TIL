@@ -1,4 +1,4 @@
-# npm install && npm run dev
+# 　  # npm install && npm run dev
 
 実行後、エラーが出た時の対処法
 
