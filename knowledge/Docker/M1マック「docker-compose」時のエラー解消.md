@@ -83,6 +83,7 @@ services:
 ```yml
  nginx:
     image: nginx:1.19.1
+    platform: linux/amd64
     container_name: php_simple_memo_nginx
     ports:
       - 8080:8080
