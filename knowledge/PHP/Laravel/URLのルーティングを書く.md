@@ -129,20 +129,64 @@ viewヘルパーはviewsの配下からファイルをみてくれます。
 ### ユーザー登録画面の表示について(/userにアクセス)
 (/userにアクセスした場合はユーザー登録画面を表示)
 
+１と同じように、処理する内容については、
 
+`RegisterController@showRegistrationForm`が使用
 
+RegisterControllerは下記にファイルがあります。
 
+`/作成したディレクトリ/app/Http/Controllers/Auth/RegisterController.php
+`
 
+1と同じくして、
 
+`RegisterController`のコントローラを参照しても、`showRegistrationFormメソッド`は書いていません。
 
+これもコントローラ内でトレイトを定義して(use RegistersUsers)、
 
+そっちで処理を使うようになってる
 
+トレイトのファイルは下記
+`/作成したディレクトリ/vendor/laravel/ui/auth-backend/RegistersUsers.php
+`
 
+中身は、こんな感じ。
+```php
+public function showRegistrationForm()
+{
+    return view('auth.register');
+}
 
+```
+処理の内容としては、シンプルで
+
+`作成したディレクトリ/resources/views`に配置されている
+
+auth配下にある`register.blade.php`の画面を表示しているだけ
 
 ## ３つめ
+### メモ投稿画面の表示について(/memoにアクセス)
+```php
+Route::get('/memo', function() {
+    return view("memo");
+})->name('memo.index');
 
+```
+第2引数の処理内容は、
 
+`PHPのクロージャ`を記述
 
+中にはreturn `view("memo")`が書いているだけ
 
+処理の内容としては、
 
+`作成したディレクトリ/resources/views`配下に配置されている`memo.blade.php`が表示される
+
+### このようにURLにアクセスされた場合の処理を、クロージャに直接書くこともできます。
+
+それぞれのURL定義についている、
+`->name('memo.index')`ですが、
+
+これはURLに別名を付ける事ができ、
+
+Laravel内でアクセスする場合に使用できる。
