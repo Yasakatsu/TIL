@@ -111,7 +111,8 @@ public function showLoginForm()
 
 このview関数は**Laravel全体で使える関数**になります。こういう関数を
 
-### ヘルパーといいます。
+### ヘルパー関数といいます。
+※参照[ヘルパー関数](https://tech.amefure.com/php-laravel-helper#header)
 
 因みに、対象の画面は下記に配置されることになる
 
