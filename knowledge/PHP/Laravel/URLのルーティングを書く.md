@@ -79,6 +79,8 @@ LoginControllerのshowLoginFormメソッドを使用するようにしていま�
 
 下記にファイル自体は存在しますが、対象のメソッドはないので注意
 
+[Laravelのディレクトリ階層](knowledge/PHP/Laravel/各、ディレクトリの意味.md)
+
 `/作成したディレクトリ/app/Http/Controllers/Auth/LoginController.php`
 
 対象のメソッド処理は・・・
@@ -87,8 +89,56 @@ LoginControllerの**トレイトとして使用されている下記に記載**
 
 `/作成したディレクトリ/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php`
 
+LoginController.phpの中でトレイトを使用するように
+
+use AuthenticatesUsers;の一文があります。
+
+vendor配下はcomposerでインストールしたライブラリが入るディレクトリになる
+
+ファイルを開いて、対象を確認すると下記のようになっている
+
+```php
+public function showLoginForm()
+{
+    return view('auth.login');
+}
+
+```
+中身はreturnでviewを返していますね。
+
+このようにreturnを使用してviewを返すように処理を実行すると、引数で渡されている画面の内容を表示してくれます。
+
+このview関数は**Laravel全体で使える関数**になります。こういう関数を
+
+### ヘルパーといいます。
+
+因みに、対象の画面は下記に配置されることになる
+`/作成したディレクトリ/resources/views/auth/login.blade.php`
+`.blade.php`はLaravelの画面(view)ファイルになります。
+
+viewヘルパーはviewsの配下からファイルをみてくれます。
+## 豆知識
+今回のauth.loginを指定している中で、Laravelでは**「.」**で、
+
+### 下のディレクトリを表す
+
+なので、auth.loginと記述するとauth配下のloginページが呼ばれているということになる。
 
 ## ２つめ
+### ユーザー登録画面の表示について(/userにアクセス)
+(/userにアクセスした場合はユーザー登録画面を表示)
+
+
+
+
+
+
+
+
+
+
+
+
 ## ３つめ
 
 
