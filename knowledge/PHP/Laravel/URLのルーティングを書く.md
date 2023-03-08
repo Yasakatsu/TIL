@@ -114,11 +114,14 @@ public function showLoginForm()
 ### ヘルパーといいます。
 
 因みに、対象の画面は下記に配置されることになる
+
 `/作成したディレクトリ/resources/views/auth/login.blade.php`
 `.blade.php`はLaravelの画面(view)ファイルになります。
 
 viewヘルパーはviewsの配下からファイルをみてくれます。
+
 ## 豆知識
+
 今回のauth.loginを指定している中で、Laravelでは**「.」**で、
 
 ### 下のディレクトリを表す
@@ -147,10 +150,12 @@ RegisterControllerは下記にファイルがあります。
 そっちで処理を使うようになってる
 
 トレイトのファイルは下記
+
 `/作成したディレクトリ/vendor/laravel/ui/auth-backend/RegistersUsers.php
 `
 
 中身は、こんな感じ。
+
 ```php
 public function showRegistrationForm()
 {
