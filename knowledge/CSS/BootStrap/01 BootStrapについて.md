@@ -15,13 +15,9 @@
 
 3.パッケージ管理ツールでダウンロードしたファイルを読み込む
 
-@import../css/reset.css';
+`@import../css/reset.css';`(cssを指定した場合は@import url(../css/reset.css)，に変換されるだけなので注意)
 
-(cssを指定した場合は@import url(../css/reset.css)，に変換されるだけなので注意)
-
-@import '…. /node_modules/bootstrap/scss/bootstrap';
-
-(bootstrapを読み込んでから独自のCSSを読み込むこと)
+`@import '…. /node_modules/bootstrap/scss/bootstrap';`(bootstrapを読み込んでから独自のCSSを読み込むこと)
 
 ## BootStrapの注意点
 
