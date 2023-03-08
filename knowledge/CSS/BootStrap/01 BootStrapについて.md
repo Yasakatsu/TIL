@@ -15,11 +15,8 @@
 `$ yarn at bootstrap`と打つと、yarnの場合、読み込まれる。
 
 
-4.reset.cssを使用する
+4.１・２・３の手法を用いたのち、`reset.css`を別で読み込み使用する
 
-`@import../css/reset.css';`(cssを指定した場合は@import url(../css/reset.css)，に変換されるだけなので注意)
-
-`@import '…. /node_modules/bootstrap/scss/bootstrap';`(bootstrapを読み込んでから独自のCSSを読み込むこと)
 
 ## BootStrapの注意点
 
