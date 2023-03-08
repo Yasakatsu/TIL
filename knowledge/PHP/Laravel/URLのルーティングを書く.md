@@ -79,13 +79,13 @@ LoginControllerのshowLoginFormメソッドを使用するようにしていま�
 
 下記にファイル自体は存在しますが、対象のメソッドはないので注意
 
-/作成したディレクトリ/app/Http/Controllers/Auth/LoginController.php
+`/作成したディレクトリ/app/Http/Controllers/Auth/LoginController.php`
 
 対象のメソッド処理は・・・
 
 LoginControllerの**トレイトとして使用されている下記に記載**
 
-/作成したディレクトリ/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php
+`/作成したディレクトリ/vendor/laravel/ui/auth-backend/AuthenticatesUsers.php`
 
 
 ## ２つめ
