@@ -20,9 +20,7 @@
 
 ## BootStrapの注意点
 
-1.被るclass名は使わない
+1. 被るclass名は使わない(containerというクラス名が被っているため使わない)
 
-(containerというクラス名が被っているため使わない)
-
-2.ver3とver4とでclass名やブレークポイントが違う
+2. ver3とver4とでclass名やブレークポイントが違う
 
