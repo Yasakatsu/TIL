@@ -22,5 +22,5 @@
 
 1. 被るclass名は使わない(containerというクラス名が被っているため使わない)
 
-2. ver3とver4や、大型verU時にはclass名やブレークポイントの変更があるため注意
+2. ver3とver4や、大型verUpdate時にはclass名やブレークポイントの変更があるため注意
 
