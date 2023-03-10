@@ -42,7 +42,17 @@ Sassは、Web開発者やデザイナーにとって非常に有用なツール�
 3.見やすくてバグが発生しにくい
 
 ## sassの特徴
-1.ネスト（入れ子構造）で書く
+### 1.ネスト（入れ子構造）で書く
+```scss
+.header{
+box-sizing:border-box;
+&.float-active {
+  tansition: .3s;
+  background: rgba(255,255,255,0);
+  }
+
+}
+```
 
 2.変数が使える
 
