@@ -46,13 +46,18 @@ Sassは、Web開発者やデザイナーにとって非常に有用なツール�
 ```scss
 .header{
 box-sizing:border-box;
-&.float-active {
+.float-active {
   tansition: .3s;
   background: rgba(255,255,255,0);
   }
 
 }
 ```
+この場合、cssに書き出すと
+```css
+.header .float-active{}
+```
+という風に、子要素かできる
 
 ### 2.変数が使える
 ```scss
