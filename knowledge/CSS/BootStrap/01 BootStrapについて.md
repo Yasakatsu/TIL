@@ -12,7 +12,7 @@
 
 3.パッケージ管理ツール（yarn等）でダウンロードしファイルを読み込む
 
-`$ yarn at bootstrap`と打つと、yarnの場合、読み込まれる。
+`$ yarn add bootstrap`と打つと、yarnの場合、読み込まれる。
 
 
 4.１・２・３の手法を用いたのち、`reset.css`を別で読み込み使用する
