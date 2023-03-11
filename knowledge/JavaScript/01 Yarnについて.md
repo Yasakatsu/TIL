@@ -1,6 +1,6 @@
 # yarnとは
 
-Facebookが開発したJavaScriptのパッケージマネージャーです。
+Facebookが開発したJavaScriptのパッケージマネージャー
 
 npmと同様に、プロジェクトで使用される外部のライブラリやモジュールを管理することができます。
 
@@ -33,10 +33,17 @@ npmとの互換性があり、npmで管理されているパッケージをyarn�
 
 ### yarnを使用することで、JavaScriptのパッケージ管理をより簡単に、より効率的に行うことができます。
 
-## yarn.lock.　ファイルについて
+## 使い方
+* 目的のディレクトリにて、`yarn init`（初期化を行う作業）コマンドを打つ→→→この時点で`package.json`ファイルが作成される
+* `yarn install`コマンドを打つ。（node_modulesディレクトリが作成される）（`yarn.lock`ファイルが作成される）
+* 
+
+## yarn.lock　ファイルについて
 
 このファイルは、チームメンバー間で、バージョンの違いで環境開発がバラバラになるのを防ぐため、入れる。（というか、勝手に入る）
 
-### ・npm install → `package-lock.json`ファイル
+### npm install　もしくは　npm -i　
+`package-lock.json`ファイル +`package.json`ファイル
 
-### ・yarn install → `yarn.lock`ファイル
+### yarn install もしくは　yarn -i 
+`yarn.lock`ファイル        +`package.json`ファイル
