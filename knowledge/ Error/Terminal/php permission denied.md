@@ -5,4 +5,4 @@ PATHが通っていない確率、高めなので、
 
 以下、コマンドをルートディレクトリ上で実施。
 
-'vi .bash_profile'
+`vi .bash_profile`
