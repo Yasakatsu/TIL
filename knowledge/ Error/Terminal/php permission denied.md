@@ -12,3 +12,5 @@ PATHが通っていない確率、高めなので、
 すでにごちゃごちゃ書いてあると思うので、下記内容を追記(ver内に自分が起動しているphpのver数値を入力し記述する)
 
 `export PATH=/usr/local/opt/php@ver.ver.ver/bin:$PATH`
+
+
