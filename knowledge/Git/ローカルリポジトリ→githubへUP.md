@@ -10,4 +10,21 @@
 
 ### 既存のファイルを全てステージ（インデックス）にあげる
 
-コマンド`git add .`(全てのファイルがあがる)
+１）　コマンド`git add .`(全てのファイルがあがる)
+
+２）コマンド `git commit -m "〇〇〇〇（メッセージ送信）"
+`
+
+# githubでの操作
+
+１）新規、既存のディレクトリを作成、確認する
+
+２）`コード`というタブをクリックし、HTTPSのURLをコピー
+
+例：`https://github.com/Yasakatsu/TIL.git`
+
+# ローカルリポジトリでの操作
+
+作業ディレクトリに戻り、コマンド`git remote add main https://github.com/Yasakatsu/TIL.git`を入力
+
+
