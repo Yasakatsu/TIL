@@ -30,5 +30,9 @@
 `git push main main`コマンド入力。
 
 
+# pushできない場合
 
+大体が、前のcommit内容と、衝突している事が多いので、
+
+一度、コマンド`git rebase main/main`打って、その後、pushするとgood
 
