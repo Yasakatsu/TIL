@@ -1,4 +1,4 @@
-# ローカルリポジトリでの操作
+# ローカルリポジトリ操作
 
 プロジェクト上のディレクトリを確認。
 
@@ -15,7 +15,7 @@
 ２）コマンド `git commit -m "〇〇〇〇（メッセージ送信）"
 `
 
-# githubでの操作
+# github操作
 
 １）新規、既存のディレクトリを作成、確認する
 
@@ -23,8 +23,12 @@
 
 例：`https://github.com/Yasakatsu/TIL.git`
 
-# ローカルリポジトリでの操作
+# ローカルリポジトリ操作
 
 作業ディレクトリに戻り、コマンド`git remote add main https://github.com/Yasakatsu/TIL.git`を入力
+
+`git push main main`コマンド入力。
+
+
 
 
