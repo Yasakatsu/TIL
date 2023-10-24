@@ -1,4 +1,4 @@
-#　エラー解消方法
+#エラー解消方法
 
 [Recived a non-Vinyl object in dest()エラーの解消方法](https://stackoverflow.com/questions/51162471/gulpfile-error-recived-a-non-vinyl-object)
 
