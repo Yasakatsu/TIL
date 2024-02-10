@@ -25,4 +25,9 @@ class PostController extends Controller
         $request->session()->flash('message', '投稿が完了致しました。');
         return back();
     }
+    public function index()
+    {
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
+    }
 }
