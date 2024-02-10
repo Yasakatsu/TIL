@@ -41,4 +41,5 @@ Route::post('post', [PostController::class, 'store'])
 
 Route::get('post', [PostController::class, 'index']);
 
+
 require __DIR__ . '/auth.php';
