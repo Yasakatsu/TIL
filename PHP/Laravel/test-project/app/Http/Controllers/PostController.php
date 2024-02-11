@@ -45,7 +45,8 @@ class PostController extends Controller
         // $posts = Post::where('user_id', '!=', auth()->id())->get();
 
         // データの内容を新しい順に取得
-        $posts = Post::latest()->get();
+        // with()メソッド：DBへは一度のアクセスで済む
+        $posts = Post::latest()->with('user')->get();
 
         return view('post.index', compact('posts'));
     }
