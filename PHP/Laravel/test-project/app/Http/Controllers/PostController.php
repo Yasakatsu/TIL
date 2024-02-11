@@ -36,13 +36,16 @@ class PostController extends Controller
         // viewメソッドの第二引数に$postsを渡す (compact関数を使用)
         // compact関数は変数名をキー、変数の値を値とする連想配列を返す
         // ログインユーザーの投稿のみを取得
-        $posts = Post::all();
+        // $posts = Post::all();
 
         // ログインユーザーの投稿のみを取得
         // $posts = Post::where('user_id', auth()->id())->get();
 
         // ログインユーザー以外の投稿のみを取得
         // $posts = Post::where('user_id', '!=', auth()->id())->get();
+
+        // データの内容を新しい順に取得
+        $posts = Post::latest()->get();
 
         return view('post.index', compact('posts'));
     }
