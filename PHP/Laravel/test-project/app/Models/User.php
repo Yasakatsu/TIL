@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // 以下のpostsメソッドを追加
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

@@ -15,7 +15,9 @@
         {{ $post->body }}
       </p>
       <div class="p-4 text-sm font-semibold">
-        {{$post->created_at}}
+        <p>
+          {{$post->created_at}} /{{$post->user->name??'名無し'}}
+        </p>
       </div>
     </div>
     @endforeach
