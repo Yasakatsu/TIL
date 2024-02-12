@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\PostController;
+use Illuminate\Routing\Controllers\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,13 +34,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-Route::get('/post/create', [PostController::class, 'create']);
+Route::middleware(['auth', 'role'])->group(function () {
+    Route::get('/post/create', [PostController::class, 'create']);
+    Route::get('post', [PostController::class, 'index']);
+});
 
 Route::post('post', [PostController::class, 'store'])
     ->name('post.store');
-
-Route::get('post', [PostController::class, 'index']);
-
 
 require __DIR__ . '/auth.php';
