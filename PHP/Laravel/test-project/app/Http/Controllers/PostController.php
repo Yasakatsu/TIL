@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use illuminate\Support\Facades\Gate;
 
 class PostController extends Controller
 {
@@ -11,9 +12,10 @@ class PostController extends Controller
     {
         return view('post.create');
     }
-    // 以下のstoreメソッドを追加
+    // 新規投稿を保存するstoreメソッドを追加
     public function store(Request $request)
     {
+        Gate::authorize('test');
         // バリデーションを追加
         $validated = $request->validate(
             [
