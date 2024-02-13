@@ -32,7 +32,7 @@ class PostController extends Controller
         return back();
     }
 
-    // 以下のindexメソッドを追加
+    // 記事一覧を表示するindexメソッドを追加
     public function index()
     {
         // viewメソッドの第二引数に$postsを渡す (compact関数を使用)
@@ -49,7 +49,11 @@ class PostController extends Controller
         // データの内容を新しい順に取得
         // with()メソッド：DBへは一度のアクセスで済む
         $posts = Post::latest()->with('user')->get();
-
         return view('post.index', compact('posts'));
+    }
+    // 記事詳細を表示するshowメソッドを追加
+    public function show(Post $post)
+    {
+        return view('post.show', compact('post'));
     }
 }
