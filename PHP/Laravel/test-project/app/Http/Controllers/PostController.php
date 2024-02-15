@@ -70,8 +70,18 @@ class PostController extends Controller
                 'body' => 'required|max:400',
             ]
         );
+        $validated['user_id'] = auth()->id();
+
         $post->update($validated);
+        // フラッシュメッセージを追加
         $request->session()->flash('message', '更新が完了致しました。');
         return back();
+    }
+    
+    // 記事を削除するメソッド
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('post.index');
     }
 }

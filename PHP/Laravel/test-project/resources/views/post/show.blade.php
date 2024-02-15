@@ -10,6 +10,13 @@
         <h1 class="text-lg font-semibold">
           {{$post->title}}
         </h1>
+        <div class="text-right ">
+          <a href="{{route('post.edit',$post)}}">
+            <x-primary-button>
+              編集
+            </x-primary-button>
+          </a>
+        </div>
         <hr class="w-full">
         {{--whitespace-pre-line:データ保存時の行の折り返し、連続するspaceが１つになる--}}
         <p class=" mt-4 whitespace-pre-line">

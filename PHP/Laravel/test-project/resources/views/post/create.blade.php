@@ -1,7 +1,7 @@
 <x-app-layout>
-  <x-slot name="header"">
+  <x-slot name="header">
     <h2 class=" font-semibold text-xl text-gray-800 leading-tight">
-    新規投稿画面
+      新規投稿画面
     </h2>
   </x-slot>
   <div class="max-w-7xl mx-auto px-6">
@@ -11,16 +11,16 @@
     </div>
     @endif
 
-    <form action="{{route('post.store')}}" method="post">
+    <form method="post" action="{{route('post.store')}}">
       @csrf
       <div class="mt-8">
         <div class="w-full flex flex-col">
           <label for="title" class="font-semibold mt-4">件名</label> <!-- /.font-semibold mt-4 -->
           <x-input-error :messages="$errors->get('title')" class="w-auto py-2" />
           <input value=" {{old('title')}}" type=" text" name="title" class="w-auto py-2 border border-gray-300 rounded-md ">
-
         </div>
       </div>
+
       <div class=" w-full flex flex-col">
         <label for="body" class="font-semibold mt-4">本文</label>
         <x-input-error :messages="$errors->get('body')" class="mt-2" />
@@ -28,7 +28,7 @@
       </div>
 
       <x-primary-button class="mt-4 ">
-        <h1>投稿する</h1>
+        <h1>送信する</h1>
       </x-primary-button>
     </form>
   </div>
