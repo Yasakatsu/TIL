@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Routing\Controllers\Middleware;
 
 /*
@@ -37,10 +38,11 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route::middleware(['auth', 'role'])->group(function () {
-Route::get('post', [PostController::class, 'index']);
+Route::get('post', [PostController::class, 'index'])
+    ->name('post.index');
+
 Route::get('/post/create', [PostController::class, 'create']);
 // });
-
 //　新規投稿用のルート 
 Route::post('post', [PostController::class, 'store'])
     ->name('post.store');
@@ -48,12 +50,15 @@ Route::post('post', [PostController::class, 'store'])
 // 詳細記事表示用のルート
 Route::get('post/{post}', [PostController::class, 'show'])
     ->name('post.show');
-
 // 編集
 Route::get('post/{post}/edit', [PostController::class, 'edit'])
     ->name('post.edit');
 // 更新
-Route::put('post/{post}', [PostController::class, 'update'])
+Route::patch('post/{post}', [PostController::class, 'update'])
     ->name('post.update');
+// 削除
+Route::delete('post/{post}', [PostController::class, 'destroy'])
+    ->name('post.destroy');
+
 
 require __DIR__ . '/auth.php';
