@@ -41,10 +41,19 @@ Route::get('post', [PostController::class, 'index']);
 Route::get('/post/create', [PostController::class, 'create']);
 // });
 
+//　新規投稿用のルート 
 Route::post('post', [PostController::class, 'store'])
     ->name('post.store');
 
+// 詳細記事表示用のルート
 Route::get('post/{post}', [PostController::class, 'show'])
     ->name('post.show');
+
+// 編集
+Route::get('post/{post}/edit', [PostController::class, 'edit'])
+    ->name('post.edit');
+// 更新
+Route::put('post/{post}', [PostController::class, 'update'])
+    ->name('post.update');
 
 require __DIR__ . '/auth.php';

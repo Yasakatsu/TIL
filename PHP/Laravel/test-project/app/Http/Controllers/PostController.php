@@ -51,9 +51,27 @@ class PostController extends Controller
         $posts = Post::latest()->with('user')->get();
         return view('post.index', compact('posts'));
     }
-    // 記事詳細を表示するshowメソッドを追加
+    // 記事詳細を表示するメソッド
     public function show(Post $post)
     {
         return view('post.show', compact('post'));
+    }
+    // 記事編集画面を表示するメソッド
+    public function edit(Post $post)
+    {
+        return view('post.edit', compact('post'));
+    }
+    // 記事を更新するメソッド
+    public function update(Request $request, Post $post)
+    {
+        $validated = $request->validate(
+            [
+                'title' => 'required|max:20',
+                'body' => 'required|max:400',
+            ]
+        );
+        $post->update($validated);
+        $request->session()->flash('message', '更新が完了致しました。');
+        return back();
     }
 }
