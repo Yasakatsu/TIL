@@ -10,12 +10,19 @@
         <h1 class="text-lg font-semibold">
           {{$post->title}}
         </h1>
-        <div class="text-right ">
-          <a href="{{route('post.edit',$post)}}">
+        <div class="text-right flex ">
+          <a href="{{route('post.edit',$post)}}" class="flex-1">
             <x-primary-button>
               編集
             </x-primary-button>
           </a>
+          <form action="{{route('post.destroy',$post)}}" method="post" class="flex-2">
+            @csrf
+            @method('delete')
+            <x-primary-button class="bg-red-700 ml-2">
+              削除
+            </x-primary-button>
+          </form>
         </div>
         <hr class="w-full">
         {{--whitespace-pre-line:データ保存時の行の折り返し、連続するspaceが１つになる--}}

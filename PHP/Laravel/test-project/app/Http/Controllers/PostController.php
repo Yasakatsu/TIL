@@ -77,11 +77,12 @@ class PostController extends Controller
         $request->session()->flash('message', '更新が完了致しました。');
         return back();
     }
-    
+
     // 記事を削除するメソッド
-    public function destroy(Post $post)
+    public function destroy(Request $request, Post $post)
     {
         $post->delete();
-        return redirect()->route('post.index');
+        $request->session()->flash('message', '削除が完了致しました。');
+        return redirect('post');
     }
 }
