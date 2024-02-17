@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Post::paginate(5);
         return view('post.index', compact('posts'));
     }
 
@@ -37,7 +38,7 @@ class PostController extends Controller
         );
         $validated['user_id'] = auth()->id();
         $post = Post::create($validated);
-        $request->session()->flash('message', '保存しました。');
+        session()->flash('message', '保存しました。');
         return redirect()->route('post.index');
     }
 
@@ -69,14 +70,14 @@ class PostController extends Controller
             ]
         );
         $post->update($validated);
-        $request->session()->flash('message', '更新しました。');
+        session()->flash('message', '更新しました。');
         return redirect()->route('post.index', compact('post'));
     }
 
-    public function destroy(Request $request, Post $post)
+    public function destroy(Post $post)
     {
         $post->delete();
-        $request->session()->flash('message', '削除しました。');
+        session()->flash('message', '削除しました。');
         return redirect()->route('post.index');
     }
 }
